@@ -64,10 +64,11 @@ export default function Index() {
 
       <FlatList data= {todoData} keyExtractor={(item) => item.id.toString()} renderItem={({item}) => (
         <View style = {styles.toDoContainer}>
-        <View style = {styles.toDoInfoContainer}>
-          <Checkbox value={item.isDone}/>
-          <Text>{item.title}</Text>
-        </View>
+          <View style = {styles.toDoInfoContainer}>
+            <Checkbox value={item.isDone}/>
+            <Text>{item.title}</Text>
+          </View>
+          <Ionicons name="trash" size={24} color={'#333'}/>
         </View>
       )}/>
     </SafeAreaView>
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   },
   toDoInfoContainer: {
     flexDirection: 'row',
-    gap: '125',
+    gap: '35',
     alignItems: 'center',
     marginBottom: 10,
   }
