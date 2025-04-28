@@ -64,8 +64,10 @@ export default function Index() {
 
       <FlatList data= {todoData} keyExtractor={(item) => item.id.toString()} renderItem={({item}) => (
         <View style = {styles.toDoContainer}>
+        <View style = {styles.toDoInfoContainer}>
           <Checkbox value={item.isDone}/>
           <Text>{item.title}</Text>
+        </View>
         </View>
       )}/>
     </SafeAreaView>
@@ -90,7 +92,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 30,
     gap: 10,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginBottom: 20
   },
   searchInput: {
     flex: 1,
@@ -104,5 +107,11 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 25,
     marginBottom: 20,
+  },
+  toDoInfoContainer: {
+    flexDirection: 'row',
+    gap: '125',
+    alignItems: 'center',
+    marginBottom: 10,
   }
 });
